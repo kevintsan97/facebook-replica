@@ -2,12 +2,15 @@
 // import bodyParser from 'body-parser';
 // import mongoose from 'mongoose';
 // import cors from 'cors';
-const express = require('express');
-const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
-const cors = require('cors');
+const express = require('express')
+const bodyParser = require('body-parser')
+const mongoose = require('mongoose')
+const cors = require('cors')
 const routes = require('./routes/posts')
-const app = express();
+const app = express()
+
+// Get secret
+require ('dotenv').config()
 
 app.use(bodyParser.json({limit : "30mb",extended: true}));
 app.use(bodyParser.urlencoded({limit : "30mb",extended: true}));
@@ -17,7 +20,7 @@ app.use(cors());
 ///
 app.use('/posts', routes)
 ///
-const CONNECTION_URL='mongodb+srv://taitsan2406:L6QOb9uwPwJdy29j@nodeexpressjs.ydrotpr.mongodb.net/?retryWrites=true&w=majority';
+const CONNECTION_URL=process.env.MONGO_URI;
 const PORT = process.env.PORT || 5000;
 
 mongoose.connect(CONNECTION_URL)
