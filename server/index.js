@@ -20,6 +20,7 @@ app.use(cors());
 ///
 app.use('/posts', routes)
 ///
+
 const CONNECTION_URL=process.env.MONGO_URI;
 const PORT = process.env.PORT || 5000;
 
