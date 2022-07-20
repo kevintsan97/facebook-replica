@@ -1,10 +1,9 @@
-import { makeStyles } from '@mui/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles({
   media: {
-    width: '300px',
-    height: '200px',
-   
+    height: 50,
+    paddingTop: '56.25%',
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
     backgroundBlendMode: 'darken',
   },
@@ -43,7 +42,7 @@ export default makeStyles({
     margin: '20px',
   },
   title: {
-    padding: '0 5px',
+    padding: '0 16px',
   },
   cardActions: {
     padding: '0 16px 8px 16px',

@@ -1,13 +1,12 @@
 import React, {useState, useEffect} from "react"
 import useStyles from './styles'
 import FileBase from 'react-file-base64'
-import { TextField,Typography, Button, Paper,createTheme, ThemeProvider} from "@mui/material"
+import { TextField,Typography, Button, Paper} from "@material-ui/core"
 import {useDispatch,useSelector} from 'react-redux'
 import {createPost, updatePost} from '../../actions/posts'
 
 const Form = ({currentId, setCurrentId}) =>{
     const post = useSelector((state) => (currentId) ? state.posts.find(post => post._id === currentId) : null)
-    const theme = createTheme()
     const classes = useStyles()
     const dispatch = useDispatch()
     const [postData, setPostData] = useState({creator: '', title: '', message: '', tags: '', selectedFile: ''})
@@ -35,7 +34,7 @@ const Form = ({currentId, setCurrentId}) =>{
         setPostData({creator: '', title: '', message: '', tags: '', selectedFile: ''})
     }
     return(
-        <ThemeProvider theme={theme}>
+    
             <Paper className = {classes.paper}>           
                 <form autoComplete ="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit = {handleSubmit}>
                     <Typography variant="h6" >{currentId?"Edit" : "Creating"} a memory</Typography>
@@ -58,7 +57,7 @@ const Form = ({currentId, setCurrentId}) =>{
                 </form>
 
             </Paper>
-        </ThemeProvider>
+     
        
     )
  
