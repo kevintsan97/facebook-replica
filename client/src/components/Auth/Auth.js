@@ -1,16 +1,15 @@
 import React,{useState} from 'react'
-import {Avatar, Button, Paper, Grid, Container, Typography, TextField} from '@material-ui/core'
-import { GoogleLogin, GoogleOAuthProvider, hasGrantedAllScopesGoogle } from '@react-oauth/google'
+import {Avatar, Button, Paper, Grid, Container, Typography} from '@material-ui/core'
+import { GoogleLogin, GoogleOAuthProvider } from '@react-oauth/google'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
-import decode from 'jwt-decode'
-import useStyles from './styles'
 import Input from './Input'
-import Icon from './icon'
 import {useDispatch} from 'react-redux'
 import {useNavigate} from 'react-router-dom'
 import {signin, signup} from '../../actions/auth'
+import useStyles from './styles'
 const initState = {firstName:'', lastName: '', email: '', password:'', confirmPassword: ''}
 const Auth = () => {
+
     const classes = useStyles()
     const dispatch = useDispatch()
     const navigate = useNavigate()
@@ -37,7 +36,7 @@ const Auth = () => {
 
     const switchMode = () => {
         setIsSignUp((prevIsSignUp) => !prevIsSignUp)
-        handleShowPassword(false)
+        setShowPassword(false)
     }
 
     const googleSuccess  = async (res) =>{
@@ -84,10 +83,6 @@ const Auth = () => {
                     <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_KEY} >
                         
                         <GoogleLogin 
-                            // clientId='198900657819-f4ou39hlsbch2rhab6dmohja7d9umqa5.apps.googleusercontent.com'                         
-                            // render={(renderProps) =>(
-                            //     <Button className={classes.googleButton} color="primary" fullWidth onClick={renderProps.onClick} disabled = {renderProps.disabled} startIcon={<Icon />} variant="contained">Google Sign In</Button>
-                            // )}
                             
                             onSuccess={googleSuccess}
                             onFailure={googleFailure}
