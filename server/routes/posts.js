@@ -1,9 +1,9 @@
 const express = require('express')
 const router = express.Router()
 const auth = require('../middleware/auth')
-const {getPosts,createPosts, updatePost,deletePost,likePost} = require('../controllers/posts')
+const {getPostsBySearch,getPosts,createPosts, updatePost,deletePost,likePost} = require('../controllers/posts')
 
-
+router.get('/search', getPostsBySearch);
 router.get('/', getPosts)
 router.post('/', auth, createPosts)
 router.patch('/:id', auth, updatePost)

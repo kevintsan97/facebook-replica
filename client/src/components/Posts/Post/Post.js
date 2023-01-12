@@ -35,7 +35,7 @@ const Post = ({post, setCurrentId}) =>{
         return <><ThumbUpAltOutLine fontSize="small" /> &nbsp;Like</>
     }
     return (
-        <Card className={classes.card}>
+        <Card className={classes.card} raised elevation={6}>
             <CardMedia className={classes.media} image={post.selectedFile} title={post.title} component="div"  />
             <div className={classes.overlay}>
                 <Typography variant = "h6">{post.name}</Typography>
