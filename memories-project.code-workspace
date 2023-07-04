@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../HCL/GraphQL/graphql-demo"
+		},
+		{
+			"path": "../../../HCL/GraphQL/graphql-client"
+		}
+	],
+	"settings": {}
+}

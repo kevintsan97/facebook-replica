@@ -2,7 +2,7 @@
 import './App.css'
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate, Link} from 'react-router-dom'
 import useStyles from './styles'
 import { Container, Grow, Grid } from '@material-ui/core'
 import Navbar from './components/NavBar/Navbar'
@@ -18,10 +18,11 @@ function App() {
       <Container maxwidth="xl">
         <Navbar />
         <Routes>
-          <Route path='/' exact element={<Navigate to="/posts" />}/>
+          {/* <Route path='/' exact element={<Navigate to="/posts" />}/> */}
+          <Route path='/' exact element={<Home />}/>
           <Route path='/posts' exact element={<Home />} />
           <Route path='/posts/search' exact element = {<Home /> } />
-          <Route path='/posts/:id' element={<PostDetails />} />
+          <Route path='/posts/:id' exact element={<PostDetails />} />
           <Route path='/auth' exact element={!user ? <Auth /> : <Navigate to="/posts" /> } />
         </Routes>
       </Container>

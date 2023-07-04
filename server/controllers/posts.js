@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const PostMessage = require('../models/postMessage')
-const { post } = require('../routes/posts')
+// const { post } = require('../routes/posts')
 
 const getPosts = async (req,res) =>{
 
@@ -19,11 +19,26 @@ const getPosts = async (req,res) =>{
 
 }
 
+const getPost = async (req,res) =>{
+
+    const {id} = req.params;
+    try{
+        const post = await PostMessage.findById(id)
+        return res.status(200).json({data:post})
+    }
+    catch(error){
+        res.status(404).json({error: error.message})
+    }
+
+}
+
  const getPostsBySearch = async ( req,res) =>{
     const {searchQuery, tags} = req.query
     try{
-        const title  = new RegExp(searchQuery, 'i')
-
+        const search = searchQuery.replace(/ /g,'')
+       
+        const title  = new RegExp(search, 'i')
+      
         const posts = await PostMessage.find({$or: [{title}, {tags:{$in: tags.split(',')}}] });
 
         res.json({data: posts});
@@ -93,6 +108,7 @@ const deletePost = async(req,res) =>{
 module.exports = 
 {
     getPosts,
+    getPost,
     createPosts,
     updatePost,
     deletePost,

@@ -5,7 +5,7 @@ import memoriesLogo from '../../images/memories-Logo.png'
 import memoriesText from '../../images/memories-Text.png'
 import decode from 'jwt-decode'
 import * as actions from '../../constants/actionTypes'
-import { useNavigate, useLocation, Link } from 'react-router-dom'
+import { useNavigate, useLocation, Link, Navigate , NavLink} from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 
 const Navbar = () =>{
@@ -48,10 +48,10 @@ const Navbar = () =>{
     
     return (
         <AppBar className={classes.appBar} position="static" color="inherit">
-            <Link to='/' className={classes.brandContainer}>
+            <div onClick={()=>{navigate("/")}} className={classes.brandContainer}>
                 <img src={memoriesText} height="45px" alt="icon" />
                 <img className={classes.image} src={memoriesLogo} height="40px" alt='icon' />
-            </Link>
+            </div>
             <Toolbar className={classes.toolbar}>
                 {user ? (
                     <div className={classes.profile}>

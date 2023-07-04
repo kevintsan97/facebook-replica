@@ -1,0 +1,21 @@
+# All issues
+    1. "getStylesCreator.js:28 Uncaught TypeError: theme.spacing is not a function"
+        - Occur mostly when 'redirect' to "/posts" but works fine if enter directly or refresh
+        - Click on home icon to return home seems to cause the same error
+
+    2. Sign in button does not align in mobile view
+
+    3. Filtering by memory 'tags' and 'titles' 's logic not complete
+        - Unable to filter with the combination of both
+        - If not enter anything should just return every posts
+
+    4. First click on the post won't load the details but refresh again then it works
+        - Seems to work now July 3, 2023
+    
+    5. Divider and Grid of material-ui are the problems!!
+    
+# On-going fixing
+
+
+# Fixed issues
+
