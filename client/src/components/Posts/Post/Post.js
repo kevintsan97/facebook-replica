@@ -14,11 +14,9 @@ import { deletePost, likePost } from "../../../actions/posts"
 const Post = ({ post, setCurrentId }) => {
     const classes = useStyles()
     const dispatch = useDispatch()
+    const navigate = useNavigate();
+
     const user = JSON.parse(localStorage.getItem('profile'))
-
-
-
-
     let extractedToken
     if (user?.token)
         extractedToken = decode(user.token)
@@ -37,10 +35,9 @@ const Post = ({ post, setCurrentId }) => {
         return <><ThumbUpAltOutLine fontSize="small" /> &nbsp;Like</>
     }
 
-    const navigate = useNavigate();
-    
-    const openPost = () => navigate(`/posts/${post._id}`)
-
+    const openPost = () => {
+        navigate(`/posts/${post._id}`)
+    }
 
     return (
         <Card className={classes.card} raised elevation={6} onClick={openPost} >

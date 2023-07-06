@@ -1,11 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
-// export default makeStyles((theme) => ({
-//   mainContainer:{
-//     [theme.breakpoints.down('sm')] :{
-//         flexDirection: 'column-reverse'
-//     }
-// }
-// }));
+
 
 export default makeStyles((theme) =>({
   appBarSearch:{
@@ -20,8 +14,8 @@ export default makeStyles((theme) =>({
     padding:'16px'
   },
   gridContainer:{
-    [theme.breakpoints.down('xs')]:{
-      flexDirection: 'column-reverse'
-    },
+    // [theme.breakpoints.down('xs')]:{
+    //   flexDirection: 'column-reverse'
+    // },
   },
 }))
