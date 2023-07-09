@@ -36,11 +36,11 @@ const getPost = async (req,res) =>{
     const {searchQuery, tags} = req.query
     try{
         const search = searchQuery.replace(/ /g,'')
-       
         const title  = new RegExp(search, 'i')
-      
-        const posts = await PostMessage.find({$or: [{title}, {tags:{$in: tags.split(',')}}] });
-
+        const message = new RegExp(search, 'i')
+        // Find operation at the moment is inclusive -> OR
+        // Could change in the future to AND
+        const posts = await PostMessage.find({$or: [{title},{message}, {tags:{$in: tags.split(',')}}] });
         res.json({data: posts});
     }
     catch(error){

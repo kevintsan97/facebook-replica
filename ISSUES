@@ -1,14 +1,17 @@
+# All features
+    - Re-arrange Post Detail page
+        - Having likes under the image and title on top of the image
+    - Make a card component for the "You might also like below posts"
+    - Change logo
+    - Edit avatar
+# Improvements
+    - Separate logout button from the avatar and name
 # All issues
-    2. Sign in button does not align in mobile view
-        2b. Navbar in mobile view
-
-    3. Filtering by memory 'tags' and 'titles' 's logic not complete
-        - Unable to filter with the combination of both
-        - If not enter anything should just return every posts
-    
-
-    
+  
+    6. Editing post is not functioning
+    7.
 # On-going fixing
+
 
 
 # Fixed issues
@@ -23,4 +26,15 @@
     
     5. Divider and Grid of material-ui are the problems!!
         ==>>SOLVED!!
-    ## Same problem for all 3 -> Fix theme.spacing
+        ==>> Same problem for all 3 -> Fix theme.spacing
+
+    2. Sign in button does not align in mobile view
+        2b. Navbar in mobile view (RESOLVED WHEN NOT LOGIN)
+        2c. Same issue when login in with name, avaar and logout btn
+        ==>> RESOLVED AS WELL
+        
+    3. Filtering by memory 'tags' and 'titles' 's logic not complete
+        - 3a. Unable to filter with the combination of both
+        - 3b. If not enter anything should just return every posts
+        ==>> 3b is RESOLVED!
+        ==>> 3a right now the logic is inclusive - Tags, Title, Message -> OR operation - Can change to AND if need exclusive amongst the three
