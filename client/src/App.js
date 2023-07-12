@@ -1,9 +1,7 @@
 
-import './App.css'
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { BrowserRouter, Routes, Route, Navigate, Link} from 'react-router-dom'
-import useStyles from './styles'
 import { Container, Grow, Grid } from '@material-ui/core'
 import Navbar from './components/NavBar/Navbar'
 import { getPosts } from './actions/posts'
