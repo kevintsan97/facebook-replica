@@ -34,9 +34,12 @@ export default makeStyles((theme) => ({
   },
   toolbar: {
     display: 'flex',
-    alignItems: 'center',
+    justifyContent: 'center',
     padding: '0px',
     width: '100%',
+    '@media (min-width: 800px)':{
+      justifyContent:'flex-end'
+    },
     '@media (max-width: 800px)': {
       width: '100%',
       margin:'auto'

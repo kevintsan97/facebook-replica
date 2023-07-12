@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { AppBar, Avatar, Toolbar, Typography, Button } from '@material-ui/core'
 import useStyles from './styles'
-import memoriesLogo from '../../images/memories-Logo.png'
 import memoriesText from '../../images/memories-Text.png'
 import decode from 'jwt-decode'
 import * as actions from '../../constants/actionTypes'
-import { useNavigate, useLocation, Link, Navigate, NavLink } from 'react-router-dom'
+import { useNavigate, useLocation} from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import { Container, Grow, Grid, Paper, TextField, ThemeProvider } from '@material-ui/core'
+import { Container, Grow, Grid} from '@material-ui/core'
 
 const Navbar = () => {
     const classes = useStyles()
@@ -47,25 +46,6 @@ const Navbar = () => {
 
 
     return (
-        // <AppBar className={classes.appBar} position="static" color="inherit">
-        //     <div onClick={()=>{navigate("/")}} className={classes.brandContainer}>
-        //         <img src={memoriesText} className={classes.memoriesText} height="45px" alt="icon" />             
-        //     </div>
-        //     <Toolbar className={classes.toolbar}>
-        //         {user ? (
-        //             <div className={classes.profile}>
-        //                 <Avatar className={classes.purple} alt={userData.name} src={userData.picture}>
-        //                     {userData.name.charAt(0)}</Avatar>
-        //                 <Typography className={classes.userName} variant="h6">{userData.name}</Typography>
-        //                 <Button variant ="contained" className={classes.btn} color="secondary" onClick={logOut} href="/auth">Logout</Button>
-        //             </div>
-        //         )                 
-        //         : 
-        //         (
-        //              <Button className={classes.btn} variant="contained" color="primary" href="/auth">Sign In</Button>                     
-        //         )}
-        //     </Toolbar>
-        // </AppBar>
         <Grow in>
             <Container maxWidth="xl">
                 <Grid container justifyContent="space-between" alignItems="stretch" spacing={5} className={classes.gridContainer}>
